@@ -7,12 +7,15 @@
   --secondary-color: #ffffff;
   --main-background-color: #2f303a;
   --third-text-color: rgba(255, 255, 255, 0.6);
+  --fourth-color: rgba(255, 255, 255, 0.1);
+  --overlay: #000000;
   --shadow: rgba(0, 0, 0, 0.15);
   --second-shadow: rgba(0, 0, 0, 0.25);
   --second-background-color: #f5f4fa;
   --item-border-color: #eeeeee;
   --header-border-color: #ececec;
   --gradient: rgba(47, 48, 58, 0.4);
+  --grey-fill-color: #afb1b8;
 }
 
 *,
@@ -141,7 +144,7 @@ address {
   width: 16px;
   height: 12px;
   margin-right: 10px;
-  fill: currentColor;
+  --icom-color: currentColor;
 }
 
 .connect-item {
@@ -174,7 +177,7 @@ address {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  border: 1px solid #000000;
+  border: 1px solid var(--overlay);
 }
 
 .header-list .list-link.current {
@@ -216,6 +219,26 @@ address {
 
 .specials {
   padding-top: 94px;
+}
+
+.specials-icons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.icon-place {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  width: 270px;
+  height: 120px;
+  background-color: var(--second-background-color);
+}
+
+.item-icon {
+  width: 70px;
+  height: 70px;
 }
 
 .specials-list {
@@ -312,7 +335,6 @@ address {
 
 .position-title {
   padding-top: 30px;
-  padding-bottom: 30px;
 }
 
 .position {
@@ -320,11 +342,82 @@ address {
   color: var(--alt-text-color);
 }
 
-/* Цвет при наведении, фокусе и цвет акцента */
+.social-networks {
+  margin-bottom: 30px;
+  margin-left: 32px;
+  margin-right: 32px;
+  margin-top: 10px;
+}
 
-/* .header-icons:hover {
-  fill: var(--accent-hover-color);
-} */
+.networks-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.networks-item {
+  display: flex;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+}
+
+.networks-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  width: 44px;
+  fill: var(--grey-fill-color);
+}
+
+.networks-icon {
+  width: 20px;
+  height: 20px;
+  --icon-color: currentColor;
+}
+
+/* Стили постоянных клиентов */
+
+.costumers {
+  padding: 94px 0;
+}
+
+.regular-costumers {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.1666;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: var(--title-text-color);
+  margin-bottom: 50px;
+}
+
+.costumers-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.costumer-item {
+  display: block;
+}
+
+.costumer-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 170px;
+  height: 92px;
+  fill: var(--grey-fill-color);
+  border: 1px solid var(--grey-fill-color);
+  border-radius: 4px;
+}
+
+.costumer-icon {
+  width: 106px;
+  height: 60px;
+}
+
+/* Цвет при наведении, фокусе и цвет акцента */
 
 .list-link:hover,
 .list-link:focus,
@@ -341,6 +434,24 @@ address {
   background-color: var(--accent-hover-color);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
+}
+
+.networks-link:hover,
+.networks-link:focus {
+  background-color: var(--accent-hover-color);
+  border-radius: 50%;
+  fill: var(--secondary-color);
+}
+
+.costumer-link:hover,
+.costumer-link:focus {
+  fill: var(--accent-hover-color);
+  border: 1px solid var(--accent-hover-color);
+}
+
+.footer-link:focus,
+.footer-link:hover {
+  color: var(--accent-hover-color);
 }
 
 /* Стили кнопок */
@@ -362,9 +473,13 @@ address {
 /* Стили контактов */
 
 .footer {
-  padding-top: 60px;
-  padding-bottom: 60px;
+  padding: 60px 0;
+  display: block;
   background: var(--main-background-color);
+}
+
+.footer-container {
+  display: flex;
 }
 
 .logo-alt {
@@ -385,13 +500,79 @@ address {
   color: var(--secondary-color);
 }
 
-.location {
-  margin-top: 20px;
-  margin-bottom: 9px;
+.address > .list {
+  padding-left: 0px;
 }
 
-.contact-list {
+.location {
+  margin-top: 20px;
+}
+
+.footer-contact-list {
   color: var(--third-text-color);
+}
+
+.footer-item {
+  padding-top: 9px;
+}
+
+.footer-link {
+  color: var(--third-text-color);
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+}
+
+.footer-net-list {
+  display: flex;
+}
+
+.footer-social-networks {
+  margin-left: 70px;
+  padding-top: 12px;
+}
+
+.social-title {
+  display: flex;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  color: var(--secondary-color);
+}
+
+.footer-list-item {
+  display: flex;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--fourth-color);
+}
+
+.footer-list-item:nth-child(-n + 3) {
+  margin-right: 10px;
+}
+
+.footer-net-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+}
+
+.footer-net-icon {
+  width: 20px;
+  height: 20px;
+  fill: var(--secondary-color);
+}
+
+.footer-net-link:focus,
+.footer-net-link:hover {
+  background-color: var(--accent-hover-color);
 }
 
 /* Стили портфолио */
@@ -454,9 +635,4 @@ address {
   font-size: 16px;
   line-height: 1.87;
   color: var(--alt-text-color);
-}
-
-.break-in {
-  margin-top: 9px;
-  max-width: 231px;
 }
