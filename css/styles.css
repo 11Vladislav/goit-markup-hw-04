@@ -599,10 +599,10 @@ address {
 .project-item {
   margin-bottom: 30px;
   margin-right: 30px;
-  width: 370px;
+  width: calc(100%-60px / 3);
 }
 
-.project-item:nth-child(3n + 3) {
+.project-item:nth-child(3n) {
   margin-right: 0;
 }
 
