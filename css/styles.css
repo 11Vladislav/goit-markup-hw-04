@@ -157,6 +157,7 @@ address {
 
 .connect-link {
   display: block;
+  align-items: center;
   padding: 32px 0;
   color: var(--alt-text-color);
 }
@@ -344,7 +345,7 @@ address {
 
 .networks-list {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-top: 16px;
 }
 
